@@ -10,8 +10,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'sudo apt install npm'
-                sh 'npm test'
+                sh 'npm install -g npm'
+                
                 // Run Docker container
             }
         }
