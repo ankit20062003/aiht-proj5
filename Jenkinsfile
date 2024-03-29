@@ -8,17 +8,9 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Test') {
-            steps {
-                sh 'npm install'
-                
-                // Run Docker container
-            }
-        }
-
-        stage('build'){
-            steps {
-                sh 'npm run build'
+        stage ('build image'){
+            steps{
+                sh 'docker build -t aiht-proj5:1.0 .'
             }
         }
     }
