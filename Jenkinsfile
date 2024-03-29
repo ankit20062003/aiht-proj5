@@ -8,6 +8,13 @@ pipeline {
                 checkout scm
             }
         }
+        stage('build') {
+            steps {
+                // Checkout source code from your version control system
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
         stage ('build image'){
             steps{
                 docker.build('aiht-proj5')
