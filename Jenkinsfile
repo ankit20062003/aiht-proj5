@@ -10,7 +10,7 @@ pipeline {
         }
         stage ('build image'){
             steps{
-                sh 'docker build -t aiht-proj5:1.0 .'
+                sh 'docker build -t aiht-proj5 .'
             }
         }
     }
