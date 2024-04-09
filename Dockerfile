@@ -1,10 +1,11 @@
-FROM node:latest
+# Use a base image
+FROM nginx:alpine
 
-WORKDIR /usr/src/app
+# Copy the application files into the container
+COPY . /usr/share/nginx/html
 
-RUN npm install
+# Expose port 80 to the outside world
+EXPOSE 80
 
-COPY . .
-
-EXPOSE 4000
-CMD [ "node", "index.html" ]
+# Command to start the nginx server
+CMD ["nginx", "-g", "daemon off;"]
